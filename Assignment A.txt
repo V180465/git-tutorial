@@ -1,0 +1,399 @@
+
+Assignment A 
+
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial (main)
+$ ls -ltr
+total 0
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial (main)
+$ git init
+Initialized empty Git repository in C:/Users/Full Stack/OneDrive/Desktop/git-tutorial/.git/
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial (main)
+$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial (main)
+$ git clone
+^C
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial (main)
+$ git clone https://github.com/V180465/git-tutorial.git
+Cloning into 'git-tutorial'...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (4/4), done.
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial (main)
+$ ls -ltr
+total 0
+drwxr-xr-x 1 Full Stack 197121 0 Jan 30 16:52 git-tutorial/
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial (main)
+$ cd git-tutorial
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (main)
+$ git init
+Reinitialized existing Git repository in C:/Users/Full Stack/OneDrive/Desktop/git-tutorial/git-tutorial/.git/
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (main)
+$ git branch
+* main
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (main)
+$ git branch feature/jedi-master
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (main)
+$ git branch
+  feature/jedi-master
+* main
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (main)
+$ git checkout feature/jedi-master
+Switched to branch 'feature/jedi-master'
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git branch
+* feature/jedi-master
+  main
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ echo "A long time ago, in a glaxy far far away." > StarWars.txt
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        StarWars.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git add StarWars.txt
+warning: in the working copy of 'StarWars.txt', LF will be replaced by CRLF the next time Git touches it
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git commit -m "Added StarWars text to branch feature/jedi-master"
+[feature/jedi-master 3e6453a] Added StarWars text to branch feature/jedi-master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 StarWars.txt
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+nothing to commit, working tree clean
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ code .
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is up to date with 'origin/feature/jedi-master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .env
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git ls-files
+LICENSE
+README.md
+StarWars.txt
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git add .
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is up to date with 'origin/feature/jedi-master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .env
+
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git commit -m ".env files added"
+[feature/jedi-master ef306c4] .env files added
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .env
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git log
+commit ef306c4054f55373b3ab7ec23304e7bc07009369 (HEAD -> feature/jedi-master)
+Author: Michael V Proctor <test_repo_v180465@outlook.com>
+Date:   Tue Jan 30 17:14:23 2024 -0500
+
+    .env files added
+
+commit 3e6453ab1a49c9ae2e3f09b901065e5b1f9bda4e (origin/feature/jedi-master)
+Author: Michael V Proctor <test_repo_v180465@outlook.com>
+Date:   Tue Jan 30 16:57:47 2024 -0500
+
+    Added StarWars text to branch feature/jedi-master
+
+commit 00bc8bf7cee40c6ef833fee9ec7c5399b897a817 (origin/main, origin/HEAD, main)
+Author: Michael V Proctor <157426331+V180465@users.noreply.github.com>
+Date:   Tue Jan 30 16:44:56 2024 -0500
+
+    Initial commit
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    .gitignore
+
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git commit -d .gitignore "commit deleted .gitignore file"
+error: unknown switch `d'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -t, --[no-]template <file>
+                          use specified template file
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes
+    -o, --[no-]only       commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git add .
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git commit -m "commit deleted file"
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ touch .gitignore
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ add .
+bash: add: command not found
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git add .
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git commit -m .gitignore "file added to local repo"
+error: pathspec 'file added to local repo' did not match any file(s) known to git
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git commit -m "file added to local repo"
+[feature/jedi-master 1114a3a] file added to local repo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git add .
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitignore
+
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git commit -m "Modifications made to .gitgnore"
+[feature/jedi-master 3647fd5] Modifications made to .gitgnore
+ 1 file changed, 2 insertions(+)
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git log
+commit 3647fd5113adf5a4568dfd34e5e11745650afea5 (HEAD -> feature/jedi-master)
+Author: Michael V Proctor <test_repo_v180465@outlook.com>
+Date:   Tue Jan 30 17:34:30 2024 -0500
+
+    Modifications made to .gitgnore
+
+commit 1114a3a9943db847d90acd71a273b8ddd75c1faf
+Author: Michael V Proctor <test_repo_v180465@outlook.com>
+Date:   Tue Jan 30 17:29:56 2024 -0500
+
+    file added to local repo
+
+commit ef306c4054f55373b3ab7ec23304e7bc07009369
+Author: Michael V Proctor <test_repo_v180465@outlook.com>
+Date:   Tue Jan 30 17:14:23 2024 -0500
+
+    .env files added
+
+commit 3e6453ab1a49c9ae2e3f09b901065e5b1f9bda4e (origin/feature/jedi-master)
+Author: Michael V Proctor <test_repo_v180465@outlook.com>
+Date:   Tue Jan 30 16:57:47 2024 -0500
+
+    Added StarWars text to branch feature/jedi-master
+
+commit 00bc8bf7cee40c6ef833fee9ec7c5399b897a817 (origin/main, origin/HEAD, main)
+Author: Michael V Proctor <157426331+V180465@users.noreply.github.com>
+Date:   Tue Jan 30 16:44:56 2024 -0500
+
+    Initial commit
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git status
+On branch feature/jedi-master
+Your branch is ahead of 'origin/feature/jedi-master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git push -u orgin feature/jedi-master:main
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$ git push -u origin feature/jedi-master:main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 931 bytes | 465.00 KiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/V180465/git-tutorial.git
+   00bc8bf..3647fd5  feature/jedi-master -> main
+branch 'feature/jedi-master' set up to track 'origin/main'.
+
+Full Stack@m622pro100 MINGW64 ~/OneDrive/Desktop/git-tutorial/git-tutorial (feature/jedi-master)
+$
+
